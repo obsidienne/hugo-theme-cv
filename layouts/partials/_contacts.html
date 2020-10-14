@@ -1,0 +1,21 @@
+{{ if .Site.Data.content.BasicInfo.Contacts }}
+<div class="sideSection contact">
+    <ul>
+        {{ range .Site.Data.content.BasicInfo.Contacts }}
+        <li class="contact__item">
+            <i class="{{ .Icon }}"></i><span>{{ .Info | safeHTML }}</span>
+        </li>
+        {{ end }}
+        {{ range .Site.Data.content.BasicInfo.Websites }}
+        <li class="contact__item">
+            <i class="{{ .Icon }}"></i><a href="{{.Info | safeHTML}}">{{ .Info | safeHTML }}</a></span>
+        </li>
+        {{ end }}
+        {{ range .Site.Data.content.BasicInfo.Mailtos }}
+        <li class="contact__item">
+            <i class="{{ .Icon }}"></i><a href="mailto:{{.Info | safeHTML}}">{{ .Info | safeHTML }}</a></span>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}
